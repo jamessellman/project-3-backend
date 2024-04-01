@@ -50,7 +50,7 @@ export async function addAProduct(req: Request, res: Response) {
 //delete a product
 export async function deleteAProduct(req: Request, res: Response) {
   try {
-    //Get the footballer to delete
+    //Get the product to delete
     const deletedProduct: any = await Products.findById(req.params._id);
     if (!deletedProduct) {
       res.send({ message: "No product found" });

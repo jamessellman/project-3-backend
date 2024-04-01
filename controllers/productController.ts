@@ -56,8 +56,8 @@ export async function deleteAProduct(req: Request, res: Response) {
       res.send({ message: "No product found" });
     }
     // console.log("CurrentUserID: ", res.locals.currentUser._id);
-    // console.log("Player to delete: ", deletedProduct);
-    // console.log("PlayerUserID: ", deletedProduct?.user);
+    // console.log("product to delete: ", deletedProduct);
+    // console.log("productUserID: ", deletedProduct?.user);
 
     if (res.locals.currentUser._id.equals(deletedProduct?.user)) {
       const productID = req.params._id;
@@ -82,7 +82,7 @@ export async function updateAProduct(req: Request, res: Response) {
     }
     if (res.locals.currentUser._id.equals(productToUpdate?.user)) {
       const update = req.body;
-      //update the player
+      //update the product
       const updatedProduct = await Products.findByIdAndUpdate(
         productToUpdate,
         update,
@@ -99,7 +99,7 @@ export async function updateAProduct(req: Request, res: Response) {
     }
   } catch (e) {
     res.send({
-      message: "Player not found. Did you provide a valid productID?",
+      message: "product not found. Did you provide a valid productID?",
     });
   }
 }

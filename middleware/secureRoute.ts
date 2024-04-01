@@ -38,7 +38,7 @@ export default function secureRoute(
     // ! Attach the currentUser to the response, before we call next()
     res.locals.currentUser = user;
 
-    // ? 2) We also need the user who originally posted the movie.
+    // ? 2) We also need the user who originally posted the product.
 
     next();
   });

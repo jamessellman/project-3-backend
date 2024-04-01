@@ -182,7 +182,7 @@ async function seed() {
   await mongoose.connection.db.dropDatabase();
   console.log("Remove existing data.");
 
-  // ! Before we seed movies, we want to seed a user.
+  // ! Before we seed products, we want to seed a user.
   const user = await Users.create(adminUser);
   // console.log("Admin user is seed:", user);
   productData.forEach((product: any) => (product.user = user._id));
